@@ -1,0 +1,311 @@
+<style>
+
+.id_{{ section.id }}{
+  padding:60px 0px;
+}
+  
+.id_{{ section.id }} .container{
+  max-width:1280px;
+  width:100%;
+  margin:0px auto;
+  text-align: center;
+    background: #1C1C1C;
+    border-radius: 24px;
+    padding: 100px;
+}
+
+.id_{{ section.id }} .cus-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+
+}  
+
+.id_{{ section.id }} .cus-col{
+  max-width:calc(30% - 20px);
+  width:100%;
+}
+  
+.id_{{ section.id }} .cus-col-img{
+  max-width:calc(40% - 20px);
+  width:100%;
+}  
+
+.id_{{ section.id }} h2{
+    font-size: 34px;
+    line-height: 42px;
+    font-weight: 600;
+    color:#fff;
+    margin:0px 0px 30px;
+}
+  
+ .id_{{ section.id }} h3{
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    color:#1a1c1d;
+   margin:5px 0px 10px;
+} 
+  
+.id_{{ section.id }} p{
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color:#fff;
+   margin:0px 0px 0px;
+}
+  
+.id_{{ section.id }} .cus-panel{
+   max-height: 0;
+   overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  justify-content: space-between;
+}
+  
+.id_{{ section.id }} svg, 
+.id_{{ section.id }} img{
+    display:block;
+}  
+  
+.id_{{ section.id }} .single-box img,
+.id_{{ section.id }} .single-box svg{
+  max-width:85px;
+  width:100%;
+  margin:0px auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+  
+.id_{{ section.id }} button{
+  margin:30px 0px 0px;
+color: #fff;}
+.single-box {
+    padding: 20px;
+}
+@media(max-width:767px){
+  
+  .id_{{ section.id }}{
+    padding:30px 20px;
+  }
+  
+ .id_{{ section.id }} .cus-col-img{
+   max-width:100%;
+   order:-1;
+}
+
+.id_{{ section.id }} .cus-row{
+  gap:20px;
+} 
+  
+.id_{{ section.id }} .cus-col{
+  max-width:calc(50% - 10px);
+}
+
+.id_{{ section.id }} h2{
+    font-size:26px;
+    line-height:30px;
+    margin:0px 0px 20px;
+}
+  
+ .id_{{ section.id }} h3{
+    font-size:16px;
+    line-height: 26px;
+   margin:4px 0px 8px;
+   color: #fff;
+} 
+  
+.id_{{ section.id }} p{
+    font-size: 13px;
+    line-height: 19px;
+   margin:0px 0px 0px;
+}
+  
+.id_{{ section.id }} .single-box img,
+.id_{{ section.id }} .single-box svg{
+  max-width:80px;
+}  
+
+.id_{{ section.id }} button{
+  margin:20px 0px 0px;
+}
+ .id_{{ section.id }} .container{
+    padding: 40px 20px;
+}
+  .single-box {
+    padding: 5px;
+}
+}
+
+  
+</style>
+
+
+
+
+<section class="id_{{ section.id }}">
+  <div class="container">
+      <h2>{{ section.settings.title }}</h2>
+      <div class="cus-row">
+         <div class="cus-col cus-row">
+           {% for block in section.blocks %}
+            {% if forloop.index == 1 %}
+              <div class="single-box">
+                {% if block.settings.img != blank %}
+                  <img src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="auto">
+                {% else %}
+                  {{ "image" | placeholder_svg_tag: "placeholder-svg placeholder" }}
+                {% endif %}
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.text }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for block in section.blocks %}
+            {% if forloop.index == 3 %}
+              <div class="single-box">
+                {% if block.settings.img != blank %}
+                  <img src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="auto">
+                {% else %}
+                  {{ "image" | placeholder_svg_tag: "placeholder-svg placeholder" }}
+                {% endif %}
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.text }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+         </div>
+         <div class="cus-col-img">
+                 {% if section.settings.img != blank %}
+                  <img src="{{ section.settings.img | image_url }}" alt="{{ section.settings.img.alt }}" width="100%" height="auto">
+                {% else %}
+                  {{ "image" | placeholder_svg_tag: "placeholder-svg placeholder" }}
+                {% endif %}
+         </div>
+         <div class="cus-col cus-row">
+           {% for block in section.blocks %}
+            {% if forloop.index == 2 %}
+              <div class="single-box">
+                {% if block.settings.img != blank %}
+                  <img src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="auto">
+                {% else %}
+                  {{ "image" | placeholder_svg_tag: "placeholder-svg placeholder" }}
+                {% endif %}
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.text }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for block in section.blocks %}
+            {% if forloop.index == 4 %}
+              <div class="single-box">
+                {% if block.settings.img != blank %}
+                  <img src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="auto">
+                {% else %}
+                  {{ "image" | placeholder_svg_tag: "placeholder-svg placeholder" }}
+                {% endif %}
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.text }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+         </div>
+      </div>
+      <div class="cus-row cus-panel">
+       
+           {% for block in section.blocks %}
+           {% if forloop.index > 4 %}
+               <div class="cus-col">
+              <div class="single-box">
+                {% if block.settings.img != blank %}
+                  <img src="{{ block.settings.img | image_url }}" alt="{{ block.settings.img.alt }}" width="100%" height="auto">
+                {% else %}
+                  {{ "image" | placeholder_svg_tag: "placeholder-svg placeholder" }}
+                {% endif %}
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.text }}</p>
+              </div>
+              </div>
+            {% endif %}
+          {% endfor %}       
+         </div>
+      {% for block in section.blocks %}
+        {% if forloop.index > 4 %}
+         <button class="{{ section.id }}cus-accordion">{{ section.settings.btn-text }}</button>
+         {% break %} 
+      {% endif %}
+    {% endfor %}   
+  </div>
+</section>
+
+<script>
+var acc = document.getElementsByClassName("{{ section.id }}cus-accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.previousElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+{% schema %}
+  {
+    "name": "Featured Icon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "label": "Featured Image",
+        "id": "img"
+      },
+      {
+        "type": "text",
+        "label": "Section Title",
+        "id": "title",
+        "default":"Key Ingredients"
+      },
+      {
+        "type": "text",
+        "label": "Button Text",
+        "id": "btn-text",
+        "default":"Full Ingredient List"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icon-list",
+        "name":"Icon List",
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "Select Image",
+            "id": "img"
+          },
+          {
+            "type": "text",
+            "label": "Title",
+            "id": "title",
+            "default":"Coconut"
+          },
+          {
+            "type": "textarea",
+            "label": "Text",
+            "id": "text",
+            "default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Icon"
+      }
+    ]
+  }
+{% endschema %}
+
